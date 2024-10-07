@@ -1,0 +1,28 @@
+{
+  // global
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // frontend
+  "i18n-ally.localesPaths": ["./frontend/src/modules/i18n"],
+  "i18n-ally.enabledFrameworks": ["react-i18next"],
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "{locale}/{namespaces}.json",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.defaultNamespace": "common",
+  "i18n-ally.displayLanguage": "ko",
+  "eslint.workingDirectories": ["./frontend"],
+  "typescript.tsserver.nodePath": "./frontend/node_modules/typescript/lib",
+  "eslint.validate": ["javascript"],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.indentSize": "tabSize",
+    "editor.detectIndentation": true,
+    "editor.tabSize": 2
+  },
+
+  //spell checker
+  "cSpell.words": ["Pretendard", "svgr"]
+}

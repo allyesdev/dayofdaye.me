@@ -1,0 +1,23 @@
+.customScroll {
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 6px solid transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &.border-left-gray200 {
+    &::-webkit-scrollbar-track {
+      border-left: 1px solid var(--gray-200);
+    }
+  }
+}

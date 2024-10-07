@@ -1,0 +1,9 @@
+{
+  "chat": "채팅",
+  "history": "채팅 이력",
+  "statistics": "통계",
+  "admin": "관리자",
+  "menu": {
+    "header": "채팅 메뉴"
+  }
+}
