@@ -1,10 +1,10 @@
-export const BotIcon = () => {
+export const BotIcon = ({ size }: { size?: number }) => {
   return (
     <svg
-      height="16"
+      height={size}
       strokeLinejoin="round"
       viewBox="0 0 16 16"
-      width="16"
+      width={size}
       style={{ color: "currentcolor" }}
     >
       <path
@@ -63,7 +63,7 @@ export const GitIcon = () => {
   );
 };
 
-export const HomeIcon = ({ size = 16 }: { size: number }) => {
+export const HomeIcon = ({ size = 16 }: { size?: number }) => {
   return (
     <svg
       height={size}
@@ -673,13 +673,20 @@ export const ThumbDownIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
-export const ChevronDownIcon = ({ size = 16 }: { size?: number }) => (
+export const ChevronDownIcon = ({
+  size = 16,
+  className,
+}: {
+  size?: number;
+  className?: string;
+}) => (
   <svg
     height={size}
     strokeLinejoin="round"
     viewBox="0 0 16 16"
     width={size}
     style={{ color: "currentcolor" }}
+    className={className}
   >
     <path
       fillRule="evenodd"

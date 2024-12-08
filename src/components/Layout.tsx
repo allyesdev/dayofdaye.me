@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
-import { GlobeIcon } from "@/components/icons";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { GNB } from "@/components/GNB";
+import localFont from "next/font/local";
+
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -11,6 +13,13 @@ export const metadata: Metadata = {
 export const viewport = {
   maximumScale: 1, // Disable auto-zoom on mobile Safari
 };
+
+const pretendard = localFont({
+  src: "../static/fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
+});
 
 const LIGHT_THEME_COLOR = "hsl(0 0% 100%)";
 const DARK_THEME_COLOR = "hsl(240deg 10% 3.92%)";
@@ -32,33 +41,24 @@ const THEME_COLOR_SCRIPT = `\
   updateThemeColor();
 })();`;
 
-export default function RootLayout({
+const Layout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
-    <html lang="en">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: THEME_COLOR_SCRIPT,
-          }}
-        />
-      </head>
-      <body className="antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex flex-row items-center justify-end py-4 px-6">
-            <GlobeIcon />
-          </div>
-          <div>{children}</div>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div className="w-full h-full flex flex-col grow">
+        <GNB />
+        <main className="flex w-full h-full flex-col">{children}</main>
+      </div>
+    </ThemeProvider>
   );
-}
+};
+
+export default Layout;
