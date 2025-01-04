@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#__next {
+  @apply w-full h-full overflow-hidden;
+}
+
 html,
 body {
   width: 100%;
