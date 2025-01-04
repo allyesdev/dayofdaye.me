@@ -5,13 +5,55 @@ export const BotIcon = ({ size }: { size?: number }) => {
       strokeLinejoin="round"
       viewBox="0 0 16 16"
       width={size}
-      style={{ color: "currentcolor" }}
+      fill="none"
     >
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M8.75 2.79933C9.19835 2.53997 9.5 2.05521 9.5 1.5C9.5 0.671573 8.82843 0 8 0C7.17157 0 6.5 0.671573 6.5 1.5C6.5 2.05521 6.80165 2.53997 7.25 2.79933V5H7C4.027 5 1.55904 7.16229 1.08296 10H0V13H1V14.5V16H2.5H13.5H15V14.5V13H16V10H14.917C14.441 7.16229 11.973 5 9 5H8.75V2.79933ZM7 6.5C4.51472 6.5 2.5 8.51472 2.5 11V14.5H13.5V11C13.5 8.51472 11.4853 6.5 9 6.5H7ZM7.25 11.25C7.25 12.2165 6.4665 13 5.5 13C4.5335 13 3.75 12.2165 3.75 11.25C3.75 10.2835 4.5335 9.5 5.5 9.5C6.4665 9.5 7.25 10.2835 7.25 11.25ZM10.5 13C11.4665 13 12.25 12.2165 12.25 11.25C12.25 10.2835 11.4665 9.5 10.5 9.5C9.5335 9.5 8.75 10.2835 8.75 11.25C8.75 12.2165 9.5335 13 10.5 13Z"
-        fill="currentColor"
+        d="M9.33269 2.11898C9.33269 2.85536 8.73573 3.45231 7.99935 3.45231C7.26298 3.45231 6.66602 2.85536 6.66602 2.11898C6.66602 1.38259 7.26298 0.785645 7.99935 0.785645C8.73573 0.785645 9.33269 1.38259 9.33269 2.11898Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 3.45215V6.02358"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10 12.2856C10 12.2856 9.37143 12.9523 8 12.9523C6.62857 12.9523 6 12.2856 6 12.2856"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.7613 9.76161C5.60351 9.76161 5.47559 9.63371 5.47559 9.4759C5.47559 9.31811 5.60351 9.19019 5.7613 9.19019"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.76172 9.76161C5.91951 9.76161 6.04743 9.63371 6.04743 9.4759C6.04743 9.31811 5.91951 9.19019 5.76172 9.19019"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.2379 9.76161C10.0801 9.76161 9.95215 9.63371 9.95215 9.4759C9.95215 9.31811 10.0801 9.19019 10.2379 9.19019"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.2383 9.76161C10.3961 9.76161 10.524 9.63371 10.524 9.4759C10.524 9.31811 10.3961 9.19019 10.2383 9.19019"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M1.71387 12.9284V8.357C1.71387 7.09464 2.73722 6.07129 3.99958 6.07129H11.9996C13.262 6.07129 14.2853 7.09464 14.2853 8.357V12.9284C14.2853 14.1908 13.262 15.2141 11.9996 15.2141H3.99958C2.73722 15.2141 1.71387 14.1908 1.71387 12.9284Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -66,18 +108,31 @@ export const GitIcon = () => {
 export const HomeIcon = ({ size = 16 }: { size?: number }) => {
   return (
     <svg
-      height={size}
       strokeLinejoin="round"
       viewBox="0 0 16 16"
       width={size}
-      style={{ color: "currentcolor" }}
+      height={size}
+      fill="none"
     >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12.5 6.56062L8.00001 2.06062L3.50001 6.56062V13.5L6.00001 13.5V11C6.00001 9.89539 6.89544 8.99996 8.00001 8.99996C9.10458 8.99996 10 9.89539 10 11V13.5L12.5 13.5V6.56062ZM13.78 5.71933L8.70711 0.646409C8.31659 0.255886 7.68342 0.255883 7.2929 0.646409L2.21987 5.71944C2.21974 5.71957 2.21961 5.7197 2.21949 5.71982L0.469676 7.46963L-0.0606537 7.99996L1.00001 9.06062L1.53034 8.53029L2.00001 8.06062V14.25V15H2.75001L6.00001 15H7.50001H8.50001H10L13.25 15H14V14.25V8.06062L14.4697 8.53029L15 9.06062L16.0607 7.99996L15.5303 7.46963L13.7806 5.71993C13.7804 5.71973 13.7802 5.71953 13.78 5.71933ZM8.50001 11V13.5H7.50001V11C7.50001 10.7238 7.72386 10.5 8.00001 10.5C8.27615 10.5 8.50001 10.7238 8.50001 11Z"
-        fill="currentColor"
-      />
+      <g clipPath="url(#clip0_12_12223)">
+        <path
+          d="M15.4294 7.93153C15.4306 7.7729 15.3986 7.61578 15.3356 7.47018C15.2726 7.32458 15.18 7.19368 15.0637 7.08582L8.00086 0.571533L0.938006 7.08582C0.821692 7.19368 0.729107 7.32458 0.666143 7.47018C0.60318 7.61578 0.571219 7.7729 0.572292 7.93153V14.2858C0.572292 14.5889 0.6927 14.8796 0.907027 15.0939C1.12135 15.3082 1.41205 15.4287 1.71515 15.4287H14.2866C14.5896 15.4287 14.8804 15.3082 15.0947 15.0939C15.3091 14.8796 15.4294 14.5889 15.4294 14.2858V7.93153Z"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8 15.4286V10.8572"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_12_12223">
+          <rect width="16" height="16" fill="currentcolor" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };
@@ -742,18 +797,37 @@ export const CheckCircleFillIcon = ({ size = 16 }: { size?: number }) => {
 export const GlobeIcon = ({ size = 16 }: { size?: number }) => {
   return (
     <svg
-      height={size}
       strokeLinejoin="round"
       viewBox="0 0 16 16"
       width={size}
-      style={{ color: "currentcolor" }}
+      height={size}
+      fill="none"
     >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M10.268 14.0934C11.9051 13.4838 13.2303 12.2333 13.9384 10.6469C13.1192 10.7941 12.2138 10.9111 11.2469 10.9925C11.0336 12.2005 10.695 13.2621 10.268 14.0934ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.48347 14.4823C8.32384 14.494 8.16262 14.5 8 14.5C7.83738 14.5 7.67616 14.494 7.51654 14.4823C7.5132 14.4791 7.50984 14.4759 7.50647 14.4726C7.2415 14.2165 6.94578 13.7854 6.67032 13.1558C6.41594 12.5744 6.19979 11.8714 6.04101 11.0778C6.67605 11.1088 7.33104 11.125 8 11.125C8.66896 11.125 9.32395 11.1088 9.95899 11.0778C9.80021 11.8714 9.58406 12.5744 9.32968 13.1558C9.05422 13.7854 8.7585 14.2165 8.49353 14.4726C8.49016 14.4759 8.4868 14.4791 8.48347 14.4823ZM11.4187 9.72246C12.5137 9.62096 13.5116 9.47245 14.3724 9.28806C14.4561 8.87172 14.5 8.44099 14.5 8C14.5 7.55901 14.4561 7.12828 14.3724 6.71194C13.5116 6.52755 12.5137 6.37904 11.4187 6.27753C11.4719 6.83232 11.5 7.40867 11.5 8C11.5 8.59133 11.4719 9.16768 11.4187 9.72246ZM10.1525 6.18401C10.2157 6.75982 10.25 7.36805 10.25 8C10.25 8.63195 10.2157 9.24018 10.1525 9.81598C9.46123 9.85455 8.7409 9.875 8 9.875C7.25909 9.875 6.53877 9.85455 5.84749 9.81598C5.7843 9.24018 5.75 8.63195 5.75 8C5.75 7.36805 5.7843 6.75982 5.84749 6.18401C6.53877 6.14545 7.25909 6.125 8 6.125C8.74091 6.125 9.46123 6.14545 10.1525 6.18401ZM11.2469 5.00748C12.2138 5.08891 13.1191 5.20593 13.9384 5.35306C13.2303 3.7667 11.9051 2.51622 10.268 1.90662C10.695 2.73788 11.0336 3.79953 11.2469 5.00748ZM8.48347 1.51771C8.4868 1.52089 8.49016 1.52411 8.49353 1.52737C8.7585 1.78353 9.05422 2.21456 9.32968 2.84417C9.58406 3.42562 9.80021 4.12856 9.95899 4.92219C9.32395 4.89118 8.66896 4.875 8 4.875C7.33104 4.875 6.67605 4.89118 6.04101 4.92219C6.19978 4.12856 6.41594 3.42562 6.67032 2.84417C6.94578 2.21456 7.2415 1.78353 7.50647 1.52737C7.50984 1.52411 7.51319 1.52089 7.51653 1.51771C7.67615 1.50597 7.83738 1.5 8 1.5C8.16262 1.5 8.32384 1.50597 8.48347 1.51771ZM5.73202 1.90663C4.0949 2.51622 2.76975 3.7667 2.06159 5.35306C2.88085 5.20593 3.78617 5.08891 4.75309 5.00748C4.96639 3.79953 5.30497 2.73788 5.73202 1.90663ZM4.58133 6.27753C3.48633 6.37904 2.48837 6.52755 1.62761 6.71194C1.54392 7.12828 1.5 7.55901 1.5 8C1.5 8.44099 1.54392 8.87172 1.62761 9.28806C2.48837 9.47245 3.48633 9.62096 4.58133 9.72246C4.52807 9.16768 4.5 8.59133 4.5 8C4.5 7.40867 4.52807 6.83232 4.58133 6.27753ZM4.75309 10.9925C3.78617 10.9111 2.88085 10.7941 2.06159 10.6469C2.76975 12.2333 4.0949 13.4838 5.73202 14.0934C5.30497 13.2621 4.96639 12.2005 4.75309 10.9925Z"
-        fill="currentColor"
-      ></path>
+      <g clipPath="url(#clip0_12_6900)">
+        <path
+          d="M7.99986 15.4287C12.1026 15.4287 15.4284 12.1028 15.4284 8.0001C15.4284 3.89742 12.1026 0.571533 7.99986 0.571533C3.89717 0.571533 0.571289 3.89742 0.571289 8.0001C0.571289 12.1028 3.89717 15.4287 7.99986 15.4287Z"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M1.14258 10.8571H3.14258C3.67301 10.8571 4.18172 10.6464 4.5568 10.2713C4.93187 9.89623 5.14258 9.38751 5.14258 8.85709V7.1428C5.14258 6.61237 5.35329 6.10366 5.72836 5.72858C6.10344 5.35351 6.61214 5.1428 7.14258 5.1428C7.67301 5.1428 8.18172 4.93208 8.5568 4.55701C8.93187 4.18193 9.14258 3.67323 9.14258 3.1428V0.651367"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M15.4283 7.88585C14.8561 7.58895 14.2215 7.43227 13.5769 7.42871H11.1426C10.6121 7.42871 10.1034 7.63942 9.72836 8.01449C9.35329 8.38957 9.14258 8.89828 9.14258 9.42871C9.14258 9.95915 9.35329 10.4679 9.72836 10.8429C10.1034 11.218 10.6121 11.4287 11.1426 11.4287C11.5214 11.4287 11.8849 11.5792 12.1527 11.8471C12.4206 12.115 12.5711 12.4784 12.5711 12.8573V13.8516"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_12_6900">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };
@@ -811,6 +885,173 @@ export const ShareIcon = ({ size = 16 }: { size?: number }) => {
         d="M15 11.25V10.5H13.5V11.25V12.75C13.5 13.1642 13.1642 13.5 12.75 13.5H3.25C2.83579 13.5 2.5 13.1642 2.5 12.75L2.5 3.25C2.5 2.83579 2.83579 2.5 3.25 2.5H5.75H6.5V1H5.75H3.25C2.00736 1 1 2.00736 1 3.25V12.75C1 13.9926 2.00736 15 3.25 15H12.75C13.9926 15 15 13.9926 15 12.75V11.25ZM15 5.5L10.5 1V4C7.46243 4 5 6.46243 5 9.5V10L5.05855 9.91218C6.27146 8.09281 8.31339 7 10.5 7V10L15 5.5Z"
         fill="currentColor"
       ></path>
+    </svg>
+  );
+};
+
+export const SunIcon = ({ size = 16 }: { size?: number }) => (
+  <svg
+    height={size}
+    strokeLinejoin="round"
+    viewBox="0 0 16 16"
+    width={size}
+    style={{ color: "currentcolor" }}
+    fill="none"
+  >
+    <g clipPath="url(#clip0_12_5292)">
+      <path
+        d="M7.99999 11C9.65685 11 11 9.65685 11 8C11 6.34315 9.65685 5 7.99999 5C6.34314 5 5 6.34315 5 8C5 9.65685 6.34314 11 7.99999 11Z"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 0.571533V1.71439"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 14.2859V15.4287"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15.428 8H14.2852"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M1.71415 8H0.571289"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.2567 2.74292L12.4453 3.55435"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.55459 12.4458L2.74316 13.2572"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.2567 13.2572L12.4453 12.4458"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.55459 3.55435L2.74316 2.74292"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_12_5292">
+        <rect width="16" height="16" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const MoonIcon = ({ size = 16 }: { size?: number }) => {
+  return (
+    <svg
+      height={size}
+      strokeLinejoin="round"
+      viewBox="0 0 16 16"
+      width={size}
+      style={{ color: "currentcolor" }}
+    >
+      <path
+        d="M9.14314 8.0001C9.14852 6.61454 9.51366 5.25412 10.2028 4.05208C10.892 2.85005 11.8815 1.84761 13.0746 1.14296C12.1899 0.776693 11.2434 0.582743 10.286 0.571533C8.31581 0.571533 6.42632 1.35418 5.0332 2.74732C3.64007 4.14044 2.85742 6.02992 2.85742 8.0001C2.85742 9.97029 3.64007 11.8598 5.0332 13.2529C6.42632 14.646 8.31581 15.4287 10.286 15.4287C11.255 15.4218 12.2135 15.2278 13.1089 14.8572C11.9094 14.1569 10.9131 13.1563 10.2177 11.9539C9.52237 10.7516 9.15204 9.389 9.14314 8.0001Z"
+        stroke="currentcolor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const HalfBrightnessIcon = ({ size = 16 }: { size?: number }) => {
+  return (
+    <svg
+      height={size}
+      strokeLinejoin="round"
+      viewBox="0 0 16 16"
+      width={size}
+      fill="none"
+      style={{ color: "currentcolor" }}
+    >
+      <g clipPath="url(#clip0_12_5324)">
+        <path
+          d="M4.28516 8.00017C4.28516 10.0515 5.94809 11.7145 7.99944 11.7145V4.28589C5.94809 4.28589 4.28516 5.94883 4.28516 8.00017Z"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8 0.571533V1.71439"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8 14.2859V15.4287"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M15.428 8H14.2852"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M1.71415 8H0.571289"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M13.2567 2.74292L12.4453 3.55435"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M3.55459 12.4458L2.74316 13.2572"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M13.2567 13.2572L12.4453 12.4458"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M3.55459 3.55435L2.74316 2.74292"
+          stroke="currentcolor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_12_5324">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };
