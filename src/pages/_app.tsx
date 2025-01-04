@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/components/layout";
 import { AppProps } from "next/app";
 type AppOwnProps = { example: string };
 

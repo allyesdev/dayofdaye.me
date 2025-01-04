@@ -1,5 +1,5 @@
-import useDarkMode from "@/hooks/useDarkMode";
-import { SunIcon, MoonIcon, HalfBrightnessIcon } from "./Icons";
+import useDarkMode from "@/hooks/use-dark-mode";
+import { HalfBrightnessIcon, MoonIcon, SunIcon } from "./icons";
 
 export default function DarkModeToggle() {
   const { darkMode, handleDarkMode } = useDarkMode();

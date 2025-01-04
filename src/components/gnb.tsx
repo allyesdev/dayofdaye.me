@@ -1,5 +1,5 @@
-import { BotIcon, GlobeIcon, HomeIcon } from "@/components/Icons";
-import DarkModeToggle from "./DarkModeToggle";
+import DarkModeToggle from "@/components/darkmode-toggle";
+import { HomeIcon, BotIcon, GlobeIcon } from "./icons";
 import Link from "next/link";
 
 export const GNB = () => {
