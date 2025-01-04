@@ -16,7 +16,9 @@ const Layout = ({
     >
       <div className="w-full h-full flex flex-col grow">
         <GNB />
-        <main className="flex w-full h-full flex-col">{children}</main>
+        <main className="flex w-full h-[calc(100%-52px)] flex-col">
+          {children}
+        </main>
       </div>
     </ThemeProvider>
   );
