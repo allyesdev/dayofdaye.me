@@ -3,16 +3,16 @@ import Image from "next/image";
 export const MeWrap = ({
   children,
   wrapClass,
-  warpStyle,
+  wrapStyle,
 }: {
   children?: React.ReactNode;
   wrapClass?: string;
-  warpStyle?: React.CSSProperties;
+  wrapStyle?: React.CSSProperties;
 }) => {
   return (
     <div
       className={`flex items-center justify-center w-full h-[calc(100lvh-52px)] ${wrapClass}`}
-      style={warpStyle}
+      style={wrapStyle}
     >
       {children}
     </div>
@@ -34,7 +34,7 @@ export const Avatar = () => {
 
 export const MeMain = () => {
   return (
-    <MeWrap>
+    <MeWrap wrapStyle={{ gap: "50px" }}>
       <Avatar />
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-7xl font-bold">프론트엔드 개발자</h1>
