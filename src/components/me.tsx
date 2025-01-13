@@ -27,18 +27,21 @@ export const Avatar = () => {
       width={0}
       height={0}
       sizes="50vw"
-      style={{ width: "10%", height: "auto" }}
+      style={{ width: "30vh", height: "auto" }}
     />
   );
 };
 
 export const MeMain = () => {
   return (
-    <MeWrap wrapStyle={{ gap: "50px" }}>
+    <MeWrap>
       <Avatar />
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-7xl font-bold">프론트엔드 개발자</h1>
-        <h1 className="text-7xl font-bold">김다예</h1>
+        <h1 className="font-bold text-center break-keep">
+          프론트엔드 개발자
+          <br />
+          김다예
+        </h1>
       </div>
     </MeWrap>
   );

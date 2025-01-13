@@ -93,6 +93,20 @@ body {
 @layer base {
   * {
     @apply border-border;
+    h1 {
+      font-size: 7vw;
+    }
+    h2 {
+      font-size: 5vw;
+      font-weight: 500;
+    }
+  }
+
+  @media only screen and (max-width: 736px),
+    only screen and (device-width: 375px) and (device-height: 812px) {
+    h1 {
+      font-size: 12vw;
+    }
   }
 
   body {
