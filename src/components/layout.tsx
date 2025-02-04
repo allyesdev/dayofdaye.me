@@ -1,12 +1,22 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { GNB } from "@/components/gnb";
 import "@/app/globals.css";
+import { useScrollHook } from "@/hooks/use-scroll-hook";
 
 const Layout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
+  const {
+    scrollData,
+    handleScroll,
+    scrollToTop,
+    scrollToBottom,
+    scrollStartRef,
+    scrollEndRef,
+  } = useScrollHook();
+
   return (
     <ThemeProvider
       attribute="class"
@@ -14,11 +24,15 @@ const Layout = ({
       enableSystem
       disableTransitionOnChange
     >
-      <div className="w-full h-full flex flex-col grow">
+      <div
+        id="scroll-content"
+        className="w-full h-full flex flex-col grow overflow-auto"
+        onScroll={handleScroll}
+      >
         <GNB />
-        <main className="flex w-full h-[calc(100%-52px)] flex-col">
-          {children}
-        </main>
+        <div ref={scrollStartRef} />
+        <main className="flex w-full h-full flex-col">{children}</main>
+        <div ref={scrollEndRef} />
       </div>
     </ThemeProvider>
   );

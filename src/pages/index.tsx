@@ -1,8 +1,8 @@
 import { MeMain, MeWrap } from "@/components/me";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="w-full h-full overflow-auto">
+    <div className="w-full h-full ">
       <div className="flex flex-col items-center justify-center w-full h-fit">
         <MeMain />
         <MeWrap
@@ -13,7 +13,7 @@ export default function Home() {
         >
           <div className="w-[60vh]">
             <span>
-              사용자와 맞닿아 있는 <span className="text-5xl">프론트엔드</span>{" "}
+              사용자와 맞닿아 있는 <span className="text-5xl">프론트엔드</span>
               개발을 좋아합니다.&nbsp;
             </span>
             <span>
@@ -54,4 +54,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

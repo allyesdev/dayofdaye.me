@@ -11,7 +11,7 @@ export const MeWrap = ({
 }) => {
   return (
     <div
-      className={`flex items-center justify-center w-full h-[calc(100lvh-52px)] ${wrapClass}`}
+      className={`flex items-center justify-center w-full h-[100lvh] ${wrapClass}`}
       style={wrapStyle}
     >
       {children}
@@ -36,12 +36,9 @@ export const MeMain = () => {
   return (
     <MeWrap>
       <Avatar />
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="font-bold text-center break-keep">
-          프론트엔드 개발자
-          <br />
-          김다예
-        </h1>
+      <div className="flex flex-col items-center justify-center ml-10">
+        <h2 className="font-bold text-center break-keep">개발자</h2>
+        <h1 className="font-bold text-center break-keep">김다예</h1>
       </div>
     </MeWrap>
   );
