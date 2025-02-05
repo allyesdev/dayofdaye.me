@@ -1,5 +1,124 @@
 import Image from "next/image";
 import { MeWrap } from "./me";
+import { UsedTech, WhatIDid } from "@/types/project";
+import { projects } from "@/data/project";
+import { useMemo } from "react";
+export const ProjectItem = ({
+  index,
+  title,
+  description,
+  startDate,
+  endDate,
+  whatIDid,
+  usedTech,
+  lessonLearned,
+  imageSrc,
+}: {
+  index: number;
+  title: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  whatIDid: WhatIDid[];
+  usedTech: UsedTech[];
+  lessonLearned: string[];
+  imageSrc: string;
+}) => {
+  const className = useMemo(() => {
+    switch (index) {
+      case 0:
+        return "lg:w-[80vmin] lg:mr-20 w-[80vmin] xl:w-full xl:mr-auto";
+      case 1:
+        return "lg:w-[85vmin] lg:ml-40 w-[80vmin] xl:w-full xl:ml-auto";
+      case 2:
+        return "lg:w-[75vmin] lg:mr-10 w-[80vmin] xl:w-full xl:mr-auto";
+      case 3:
+        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] xl:w-full xl:ml-auto";
+      case 4:
+        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] xl:w-full xl:ml-auto";
+      default:
+        return "";
+    }
+  }, [index]);
+
+  return (
+    <div className={className}>
+      <details className="collapse collapse-plus rounded-2xl p-3 bg-background">
+        <summary className="collapse-title text-xl font-medium">
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
+              <h3>{title}</h3>
+              <div className="text-sm font-normal">{description}</div>
+              <div className="text-sm font-light">
+                {startDate} - {endDate}
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="text-base font-normal">What I did</div>
+              {whatIDid.map((what, whatIdx) => (
+                <div
+                  key={`what-${index}-${whatIdx}`}
+                  className="text-base font-normal flex flex-col gap-1"
+                >
+                  <div key={`what-${index}-${whatIdx}`}>{what.title}</div>
+                  <ol className="text-sm font-light list-disc list-inside ps-2">
+                    {what.description.map((description, descriptionIdx) => (
+                      <li
+                        key={`description-${index}-${whatIdx}-${descriptionIdx}`}
+                      >
+                        {description}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </div>
+        </summary>
+        <div className="collapse-content flex flex-col gap-3">
+          <Image
+            src={imageSrc}
+            alt="tax-project"
+            width={0}
+            height={0}
+            sizes="100%"
+            style={{ width: "100%", height: "auto" }}
+          />
+          <div className="text-base font-normal flex flex-col gap-1">
+            <div className="text-base font-normal">Lesson Learned</div>
+            <div className="flex justify-between">
+              <ol className="text-sm font-light list-disc list-inside ps-2">
+                {lessonLearned.map((lesson, lessonIdx) => (
+                  <li key={`lesson-${index}-${lessonIdx}`}>{lesson}</li>
+                ))}
+              </ol>
+            </div>
+          </div>
+          <div className="text-base font-normal flex flex-col gap-1">
+            <div className="text-base font-normal">사용한 기술</div>
+            <div className="flex justify-between">
+              {usedTech.map((tech, techIdx) => (
+                <div
+                  className="flex flex-col flex-auto"
+                  key={`tech-${index}-${techIdx}`}
+                >
+                  <span className="text-sm font-light">{tech.tech}</span>
+                  <ol className="text-sm font-light list-disc list-inside ps-2">
+                    {tech.skills.map((skill, skillIdx) => (
+                      <li key={`skill-${index}-${techIdx}-${skillIdx}`}>
+                        {skill}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  );
+};
 
 export const MeProject = () => {
   return (
@@ -7,83 +126,16 @@ export const MeProject = () => {
       wrapStyle={{
         backgroundColor: "hsl(var(--primary-background))",
         flexDirection: "column",
+        gap: "100px",
+        minHeight: "fit-content",
       }}
     >
       <div className="flex flex-col items-center justify-center py-20 gap-10">
         <h2>PROJECTS</h2>
-        <div className="w-[80vmin]">
-          <details className="collapse collapse-plus rounded-2xl p-3 bg-background">
-            <summary className="collapse-title text-xl font-medium">
-              <div className="flex flex-col gap-3">
-                <div className="flex flex-col gap-1">
-                  <h3>세무 채팅 AI 서비스</h3>
-                  <div className="text-sm font-normal">
-                    세법을 학습한 LLM으로 자문, 보고서 생성 서비스를 제공합니다.
-                  </div>
-                  <div className="text-sm font-light">2024.09 - 2024.12</div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div className="text-base font-normal">What I did</div>
-                  <div className="text-base font-normal flex flex-col gap-1">
-                    채팅 서비스 - 백엔드 API 및 화면 구현
-                    <ol className="text-sm font-light list-disc list-inside ps-2">
-                      <li>
-                        채팅 보내기 (SSE기반 스트리밍되도록 구현, 채팅 agent는
-                        모델러가 구현)
-                      </li>
-                      <li>다시 보내기/재생성 (트리구조로 구현)</li>
-                      <li>피드백, 내용 복사하기, 채팅 비교 다이얼로그</li>
-                      <li>참조문서 보여주기, 채팅 과정 보이기</li>
-                    </ol>
-                  </div>
-                  <div className="text-base font-normal flex flex-col gap-1">
-                    보고서 생성 서비스
-                    <ol className="text-sm font-light list-disc list-inside ps-2">
-                      <li>채팅 기반 하이라이팅 기능 구현</li>
-                      <li>보고서 생성 (스트리밍 구현)</li>
-                      <li>문단 재생성, 선택 부분 재생성 기능 구현</li>
-                      <li>문단 추가, 삭제, 문단 순서 변경 기능 구현</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
-            </summary>
-            <div className="collapse-content flex flex-col gap-3">
-              <Image
-                src={`/images/project-tax-01.png`}
-                alt="tax-project"
-                width={0}
-                height={0}
-                sizes="100%"
-                style={{ width: "100%", height: "auto" }}
-              />
-              <div className="text-base font-normal flex flex-col gap-1">
-                <div className="text-base font-normal">사용한 기술</div>
-                <div className="flex justify-between">
-                  <div className="flex flex-col flex-auto">
-                    <span className="text-sm font-normal">프론트엔드</span>
-                    <ol className="text-sm font-light list-disc list-inside ps-2">
-                      <li>React</li>
-                      <li>Typescript</li>
-                      <li>Tanstack Query</li>
-                      <li>Jotai</li>
-                      <li>SCSS</li>
-                      <li>Material UI</li>
-                    </ol>
-                  </div>
-                  <div className="flex flex-col flex-auto">
-                    <span className="text-sm font-normal">백엔드</span>
-                    <ol className="text-sm font-light list-disc list-inside ps-2">
-                      <li>FAST API</li>
-                      <li>Python</li>
-                      <li>MYSQL</li>
-                      <li>Redis</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </details>
+        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-10 xl:px-10">
+          {projects.map((project, index) => (
+            <ProjectItem key={index} index={index} {...project} />
+          ))}
         </div>
       </div>
     </MeWrap>

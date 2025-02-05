@@ -8,7 +8,7 @@ export const GNB = () => {
   const { scrollData } = useScrollHook();
 
   return (
-    <div className={cn("w-full fixed top-2 bg-transparent px-6 z-99")}>
+    <div className="w-full fixed top-2 bg-transparent px-6 z-20">
       <nav
         className={cn(
           "flex flex-row items-center justify-between py-4 px-6 gap-4 rounded-2xl bg-background h-16",
