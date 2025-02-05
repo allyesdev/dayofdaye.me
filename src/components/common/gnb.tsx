@@ -1,4 +1,4 @@
-import DarkModeToggle from "@/components/darkmode-toggle";
+import DarkModeToggle from "@/components/common/darkmode-toggle";
 import { HomeIcon, BotIcon, GlobeIcon } from "./icons";
 import Link from "next/link";
 import { useScrollHook } from "@/hooks/use-scroll-hook";

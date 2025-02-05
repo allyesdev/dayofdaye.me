@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Layout from "@/components/layout";
+import Layout from "@/components/common/layout";
 import { AppProps } from "next/app";
 type AppOwnProps = { example: string };
 

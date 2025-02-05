@@ -1,5 +1,5 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { GNB } from "@/components/gnb";
+import { ThemeProvider } from "@/components/common/theme-provider";
+import { GNB } from "@/components/common/gnb";
 import "@/app/globals.css";
 import { useScrollHook } from "@/hooks/use-scroll-hook";
 
