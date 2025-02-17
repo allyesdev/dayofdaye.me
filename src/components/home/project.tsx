@@ -27,15 +27,15 @@ export const ProjectItem = ({
   const className = useMemo(() => {
     switch (index) {
       case 0:
-        return "lg:w-[80vmin] lg:mr-20 w-[80vmin] xl:w-full xl:mr-auto";
+        return "lg:w-[80vmin] lg:mr-20 w-[80vmin] 2xl:w-full 2xl:mr-auto";
       case 1:
-        return "lg:w-[85vmin] lg:ml-40 w-[80vmin] xl:w-full xl:ml-auto";
+        return "lg:w-[85vmin] lg:ml-40 w-[80vmin] 2xl:w-full 2xl:ml-auto";
       case 2:
-        return "lg:w-[75vmin] lg:mr-10 w-[80vmin] xl:w-full xl:mr-auto";
+        return "lg:w-[75vmin] lg:mr-10 w-[80vmin] 2xl:w-full 2xl:mr-auto";
       case 3:
-        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] xl:w-full xl:ml-auto";
+        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] 2xl:w-full 2xl:ml-auto";
       case 4:
-        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] xl:w-full xl:ml-auto";
+        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] 2xl:w-full 2xl:ml-auto";
       default:
         return "";
     }
@@ -132,7 +132,7 @@ export const MeProject = () => {
     >
       <div className="flex flex-col items-center justify-center py-20 gap-10">
         <h2>PROJECTS</h2>
-        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-10 xl:px-10">
+        <div className="flex flex-col gap-10 2xl:grid 2xl:grid-cols-2 2xl:gap-10 2xl:px-10">
           {projects.map((project, index) => (
             <ProjectItem key={index} index={index} {...project} />
           ))}
