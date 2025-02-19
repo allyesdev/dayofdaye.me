@@ -8,7 +8,7 @@ export const MeInfo = () => {
         gap: "100px",
       }}
     >
-      <div className="w-[60vh]">
+      <div className="w-[80vmin] sm:w-[60vmin] break-keep text-center">
         <span>
           사용자와 맞닿아 있는 <span className="text-5xl">프론트엔드</span>
           개발을 좋아합니다.&nbsp;
@@ -19,9 +19,9 @@ export const MeInfo = () => {
         </span>
         <span>어플리케이션 빌드/배포에도 관심이 많습니다.</span>
       </div>
-      <div className="flex py-20 px-7 gap-10">
+      <div className="flex py-20 px-7 gap-10 flex-col sm:flex-row">
         <h2>INFORMATION</h2>
-        <div className="grid grid-cols-2">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
           <div className="flex items-end justify-center gap-1">
             <span className="font-light">이름</span>
             <span className="text-2xl font-light">김다예</span>

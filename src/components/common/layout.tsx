@@ -26,7 +26,7 @@ const Layout = ({
     >
       <div
         id="scroll-content"
-        className="w-full h-full flex flex-col grow overflow-auto"
+        className="w-full h-full flex flex-col grow overflow-auto overflow-x-hidden"
         onScroll={handleScroll}
       >
         <GNB />
