@@ -2,7 +2,7 @@ import Image from "next/image";
 import { MeWrap } from "./me";
 import { UsedTech, WhatIDid } from "@/types/project";
 import { projects } from "@/data/project";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 export const ProjectItem = ({
   index,
   title,
@@ -24,25 +24,63 @@ export const ProjectItem = ({
   lessonLearned: string[];
   imageSrc: string;
 }) => {
-  const className = useMemo(() => {
-    switch (index) {
-      case 0:
-        return "lg:w-[80vmin] lg:mr-20 w-[80vmin] 2xl:w-full 2xl:mr-auto";
-      case 1:
-        return "lg:w-[85vmin] lg:ml-40 w-[80vmin] 2xl:w-full 2xl:ml-auto";
-      case 2:
-        return "lg:w-[75vmin] lg:mr-10 w-[80vmin] 2xl:w-full 2xl:mr-auto";
-      case 3:
-        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] 2xl:w-full 2xl:ml-auto";
-      case 4:
-        return "lg:w-[90vmin] lg:ml-20 w-[80vmin] 2xl:w-full 2xl:ml-auto";
-      default:
-        return "";
+  const [isVisible, setIsVisible] = useState(false);
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (projectRef.current) {
+      observer.observe(projectRef.current);
     }
+
+    return () => observer.disconnect();
   }, [index]);
 
+  const className = useMemo(() => {
+    let baseClass = "visible transition-all duration-1000 transform";
+    if (!isVisible) {
+      baseClass += " opacity-0 translate-y-20 translate-x-20";
+    } else {
+      baseClass += " opacity-100 translate-y-0 translate-x-0";
+    }
+    switch (index) {
+      case 0:
+        baseClass +=
+          " lg:w-[80vmin] lg:mr-20 w-[80vmin] 2xl:w-full 2xl:mr-auto";
+        break;
+      case 1:
+        baseClass +=
+          " lg:w-[85vmin] lg:ml-40 w-[80vmin] 2xl:w-full 2xl:ml-auto";
+        break;
+      case 2:
+        baseClass +=
+          " lg:w-[75vmin] lg:mr-10 w-[80vmin] 2xl:w-full 2xl:mr-auto";
+        break;
+      case 3:
+        baseClass +=
+          " lg:w-[90vmin] lg:ml-20 w-[80vmin] 2xl:w-full 2xl:ml-auto";
+        break;
+      case 4:
+        baseClass +=
+          " lg:w-[90vmin] lg:ml-20 w-[80vmin] 2xl:w-full 2xl:ml-auto";
+        break;
+      default:
+        break;
+    }
+    return baseClass;
+  }, [index, isVisible]);
+
   return (
-    <div className={className}>
+    <div className={className} ref={projectRef}>
       <details className="collapse collapse-plus rounded-2xl p-3 bg-background">
         <summary className="collapse-title text-xl font-medium">
           <div className="flex flex-col gap-3">
