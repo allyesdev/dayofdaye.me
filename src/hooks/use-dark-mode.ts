@@ -16,9 +16,13 @@ export default function useDarkMode() {
     if (mode === "dark") {
       document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
+      document.documentElement.style.setProperty("color-scheme", "dark");
+      document.documentElement.setAttribute("data-theme", mode);
     } else if (mode === "light") {
       document.documentElement.classList.add("light");
       document.documentElement.classList.remove("dark");
+      document.documentElement.style.setProperty("color-scheme", "light");
+      document.documentElement.setAttribute("data-theme", mode);
     } else {
       const systemPrefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
@@ -26,6 +30,8 @@ export default function useDarkMode() {
       mode = systemPrefersDark ? "dark" : "light";
       document.documentElement.classList.remove("dark", "light");
       document.documentElement.classList.add(mode);
+      document.documentElement.style.setProperty("color-scheme", mode);
+      document.documentElement.setAttribute("data-theme", mode);
     }
   };
 

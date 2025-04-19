@@ -37,8 +37,12 @@ export const MeMain = () => {
     <MeWrap wrapClass="flex-col gap-10 sm:flex-row">
       <Avatar />
       <div className="flex flex-col items-center justify-center sm:ml-10">
-        <h2 className="font-bold text-center break-keep">프론트엔드 개발자</h2>
-        <h1 className="font-bold text-center break-keep">김다예</h1>
+        <h2 className="font-bold text-center break-keep dark:text-white">
+          프론트엔드 개발자
+        </h2>
+        <h1 className="font-bold text-center break-keep dark:text-white">
+          김다예
+        </h1>
       </div>
     </MeWrap>
   );

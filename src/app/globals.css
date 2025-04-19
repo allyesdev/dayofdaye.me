@@ -1,5 +1,8 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
 
 @theme {
   --font-display: "Pretendard", "sans-serif";
@@ -13,6 +16,7 @@
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
   --primary: 217 100% 45%;
+  --color-primary: 217 100% 45%;
   --primary-background: 120 11% 96%;
   --primary-foreground: 0 0% 98%;
   --secondary: 213 100% 96%;
@@ -29,7 +33,7 @@
   --radius: 0.5rem;
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 #__next {
   @apply w-full h-full overflow-hidden;
