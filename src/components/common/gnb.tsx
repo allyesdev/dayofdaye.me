@@ -11,7 +11,7 @@ export const GNB = () => {
     <div className="w-full fixed top-2 bg-transparent px-6 z-20">
       <nav
         className={cn(
-          "flex flex-row items-center justify-between py-4 px-6 gap-4 rounded-2xl bg-background h-16",
+          "flex flex-row items-center justify-between py-4 px-6 gap-4 rounded-2xl bg-white h-16",
           !scrollData.isAtTop && "shadow-md"
         )}
       >
@@ -29,13 +29,13 @@ export const GNB = () => {
               <BotIcon size={20} />
             </Link>
           </div>
-          <div className="divider divider-horizontal m-0"></div>
+          {/* <div className="divider divider-horizontal m-0"></div>
           <div className="flex h-5 tooltip tooltip-bottom" data-tip="Language">
             <button>
               <GlobeIcon size={20} />
             </button>
           </div>
-          <DarkModeToggle />
+          <DarkModeToggle /> */}
         </div>
       </nav>
     </div>

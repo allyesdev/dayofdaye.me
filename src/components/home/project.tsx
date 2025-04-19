@@ -81,7 +81,7 @@ export const ProjectItem = ({
 
   return (
     <div className={className} ref={projectRef}>
-      <details className="collapse collapse-plus rounded-2xl p-3 bg-background">
+      <details className="collapse collapse-plus rounded-2xl p-3 bg-base-100">
         <summary className="collapse-title text-xl font-medium">
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-1">

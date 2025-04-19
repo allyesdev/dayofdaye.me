@@ -33,7 +33,7 @@ const SkillItem = ({ name, description, level }: Skill) => {
         data-tip={`${level}/5`}
       >
         <div
-          className="bg-gradient-to-r from-chart-1 to-chart-2 h-full rounded-full transition-all duration-1000 ease-out"
+          className="bg-gradient-to-r from-emerald-300 to-green-200 h-full rounded-full transition-all duration-1000 ease-out"
           style={{ width: isVisible ? `${(level / 5) * 100}%` : "0%" }}
         />
       </div>
