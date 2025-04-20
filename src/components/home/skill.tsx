@@ -1,3 +1,5 @@
+"use client";
+
 import { Skill, SkillGroup } from "@/types/skill";
 import { MeWrap } from "./me";
 import { skills } from "@/data/skill";

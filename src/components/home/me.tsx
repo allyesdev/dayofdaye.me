@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export const MeWrap = ({
@@ -33,15 +34,17 @@ export const Avatar = () => {
 };
 
 export const MeMain = () => {
+  const t = useTranslations("home");
+
   return (
     <MeWrap wrapClass="flex-col gap-10 sm:flex-row">
       <Avatar />
       <div className="flex flex-col items-center justify-center sm:ml-10">
         <h2 className="font-bold text-center break-keep dark:text-white">
-          프론트엔드 개발자
+          {t("title")}
         </h2>
         <h1 className="font-bold text-center break-keep dark:text-white">
-          김다예
+          {t("name")}
         </h1>
       </div>
     </MeWrap>

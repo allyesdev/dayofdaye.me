@@ -1,3 +1,5 @@
+"use client";
+
 import { IScroll } from "@/types/scroll";
 import { atom, useAtom, useAtomValue } from "jotai";
 import { RefObject, UIEventHandler, useCallback, useEffect } from "react";

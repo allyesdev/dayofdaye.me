@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { MeWrap } from "./me";
 import { UsedTech, WhatIDid } from "@/types/project";

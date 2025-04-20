@@ -6,15 +6,14 @@
   },
 
   // frontend
-  "i18n-ally.localesPaths": ["./frontend/src/modules/i18n"],
-  "i18n-ally.enabledFrameworks": ["react-i18next"],
-  "i18n-ally.namespace": true,
-  "i18n-ally.pathMatcher": "{locale}/{namespaces}.json",
+  "i18n-ally.localesPaths": ["./messages"],
+  "i18n-ally.enabledFrameworks": ["next-intl"],
+  "i18n-ally.namespace": false,
+  "i18n-ally.pathMatcher": "{locale}.json",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.defaultNamespace": "common",
   "i18n-ally.displayLanguage": "ko",
-  "eslint.workingDirectories": ["./frontend"],
-  "typescript.tsserver.nodePath": "./frontend/node_modules/typescript/lib",
+  "eslint.workingDirectories": ["./src"],
+  "typescript.tsserver.nodePath": "./node_modules/typescript/lib",
   "eslint.validate": ["javascript"],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
