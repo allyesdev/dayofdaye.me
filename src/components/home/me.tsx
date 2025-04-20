@@ -11,7 +11,7 @@ export const MeWrap = ({
 }) => {
   return (
     <div
-      className={`flex items-center justify-center w-full h-[100lvh] ${wrapClass}`}
+      className={`flex items-center justify-center w-full h-[100lvh] min-h-max ${wrapClass}`}
       style={wrapStyle}
     >
       {children}

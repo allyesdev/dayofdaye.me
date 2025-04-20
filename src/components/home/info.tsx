@@ -19,22 +19,22 @@ export const MeInfo = () => {
         </span>
         <span>어플리케이션 빌드/배포에도 관심이 많습니다.</span>
       </div>
-      <div className="flex py-20 px-7 gap-10 flex-col sm:flex-row">
+      <div className="flex py-20 px-7 gap-10 flex-col md:items-center lg:flex-row">
         <h2>INFORMATION</h2>
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
-          <div className="flex items-end justify-center gap-1">
+          <div className="flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end">
             <span className="font-light">이름</span>
             <span className="text-2xl font-light">김다예</span>
           </div>
-          <div className="flex items-end justify-center gap-1">
+          <div className="flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end">
             <span className="font-light">email</span>
             <span className="text-2xl font-light">kdy24610@gmail.com</span>
           </div>
-          <div className="flex items-end justify-center gap-1">
+          <div className="flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end">
             <span className="font-light">학력</span>
             <span className="text-2xl font-light">숙명여자대학교</span>
           </div>
-          <div className="flex items-end justify-center gap-1">
+          <div className="flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end">
             <span className="font-light">Linked In</span>
             <a
               href="https://www.linkedin.com/in/daye-kim-577976192/"
