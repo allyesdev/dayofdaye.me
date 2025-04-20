@@ -29,15 +29,17 @@ const SkillItem = ({ name, description, level }: Skill) => {
     <div className="flex flex-col gap-4" ref={skillRef}>
       <h3>{name}</h3>
       <div
-        className="w-full bg-gray-200 h-5 rounded-full tooltip"
+        className="w-full bg-gray-200 dark:bg-gray-700 h-5 rounded-full tooltip"
         data-tip={`${level}/5`}
       >
         <div
-          className="bg-gradient-to-r from-emerald-300 to-green-200 h-full rounded-full transition-all duration-1000 ease-out"
+          className="bg-gradient-to-r from-emerald-300 to-green-200 dark:from-emerald-800 dark:to-green-700 h-full rounded-full transition-all duration-1000 ease-out"
           style={{ width: isVisible ? `${(level / 5) * 100}%` : "0%" }}
         />
       </div>
-      <div className="text-sm font-light text-gray-700">{description}</div>
+      <div className="text-sm font-light text-gray-700 dark:text-gray-300">
+        {description}
+      </div>
     </div>
   );
 };

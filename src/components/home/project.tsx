@@ -161,14 +161,14 @@ export const ProjectItem = ({
 export const MeProject = () => {
   return (
     <MeWrap
+      wrapClass="bg-emerald-50 dark:bg-emerald-950"
       wrapStyle={{
-        backgroundColor: "hsl(var(--primary-background))",
         flexDirection: "column",
         gap: "100px",
         minHeight: "fit-content",
       }}
     >
-      <div className="flex flex-col items-center justify-center py-20 gap-10">
+      <div className="flex flex-col items-center justify-center py-20 gap-10 ">
         <h2>PROJECTS</h2>
         <div className="flex flex-col gap-10 2xl:grid 2xl:grid-cols-2 2xl:gap-10 2xl:px-10">
           {projects.map((project, index) => (
