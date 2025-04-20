@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { IScroll } from "@/types/scroll";
-import { atom, useAtom, useAtomValue } from "jotai";
-import { RefObject, UIEventHandler, useCallback, useEffect } from "react";
+import { IScroll } from '@/types/scroll';
+import { atom, useAtom, useAtomValue } from 'jotai';
+import { RefObject, UIEventHandler, useCallback, useEffect } from 'react';
 
 export const scrollStartRefAtom = atom<RefObject<HTMLDivElement> | null>(null);
 export const scrollEndRefAtom = atom<RefObject<HTMLDivElement> | null>(null);
@@ -62,7 +62,7 @@ export const useScrollHook = () => {
 
   const scrollToTop = useCallback(() => {
     if (scrollStartRef?.current) {
-      scrollStartRef.current.scrollIntoView({ behavior: "smooth" });
+      scrollStartRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -71,7 +71,7 @@ export const useScrollHook = () => {
     setScrollData({ isAutoScrolling: true });
     setTimeout(() => {
       if (scrollEndRef?.current) {
-        scrollEndRef.current.scrollIntoView({ behavior: "smooth" });
+        scrollEndRef.current.scrollIntoView({ behavior: 'smooth' });
       }
       setScrollData({ isAutoScrolling: false });
     }, 100);

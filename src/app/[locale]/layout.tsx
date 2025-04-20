@@ -1,9 +1,9 @@
-import "../global.css";
+import '../global.css';
 
-import { routing } from "@/i18n/routing";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
-import { ScrollContent } from "@/components/common/scroll-content";
+import { routing } from '@/i18n/routing';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { ScrollContent } from '@/components/common/scroll-content';
 
 export default async function RootLayout({
   children,

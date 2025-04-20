@@ -1,11 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes:
+    light --default,
+    dark --prefersdark;
 }
 
 @theme {
-  --font-display: "Pretendard", "sans-serif";
+  --font-display: 'Pretendard', 'sans-serif';
   --breakpoint-3xl: 1920px;
 
   /* Light Theme Colors */

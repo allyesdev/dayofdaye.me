@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { atom, useAtom } from "jotai";
+import { atom, useAtom } from 'jotai';
 
 interface Backdrop {
   backdropOpen: boolean;
@@ -16,7 +16,7 @@ export const Backdrop = () => {
   const [{ backdropOpen, onBackdropClick }] = useAtom(backdropAtom);
   return (
     backdropOpen && (
-      <div className="fixed inset-0 -z-1" onClick={onBackdropClick} />
+      <div className='fixed inset-0 -z-1' onClick={onBackdropClick} />
     )
   );
 };

@@ -1,5 +1,5 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export const MeWrap = ({
   children,
@@ -24,28 +24,28 @@ export const Avatar = () => {
   return (
     <Image
       src={`/images/me.png`}
-      alt="me"
+      alt='me'
       width={0}
       height={0}
-      sizes="50vw"
-      style={{ width: "30vh", height: "auto" }}
+      sizes='50vw'
+      style={{ width: '30vh', height: 'auto' }}
       priority
     />
   );
 };
 
 export const MeMain = () => {
-  const t = useTranslations("home");
+  const t = useTranslations('home');
 
   return (
-    <MeWrap wrapClass="flex-col gap-10 sm:flex-row">
+    <MeWrap wrapClass='flex-col gap-10 sm:flex-row'>
       <Avatar />
-      <div className="flex flex-col items-center justify-center sm:ml-10">
-        <h2 className="font-bold text-center break-keep dark:text-white">
-          {t("title")}
+      <div className='flex flex-col items-center justify-center sm:ml-10'>
+        <h2 className='font-bold text-center break-keep dark:text-white'>
+          {t('title')}
         </h2>
-        <h1 className="font-bold text-center break-keep dark:text-white">
-          {t("name")}
+        <h1 className='font-bold text-center break-keep dark:text-white'>
+          {t('name')}
         </h1>
       </div>
     </MeWrap>
