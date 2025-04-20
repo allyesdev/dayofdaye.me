@@ -1,5 +1,6 @@
+import LanguageSelector from "./language-selector";
 import DarkModeToggle from "@/components/common/darkmode-toggle";
-import { HomeIcon, BotIcon, GlobeIcon } from "./icons";
+import { HomeIcon, BotIcon } from "./icons";
 import Link from "next/link";
 import { useScrollHook } from "@/hooks/use-scroll-hook";
 import cn from "classnames";
@@ -36,12 +37,9 @@ export const GNB = () => {
             </Link>
           </div>
           <div className="divider divider-horizontal m-0"></div>
-          {/* <div className="flex h-5 tooltip tooltip-bottom" data-tip="Language">
-            <button>
-              <GlobeIcon size={20} />
-            </button>
-          </div> */}
+
           <DarkModeToggle />
+          <LanguageSelector />
         </div>
       </nav>
     </div>

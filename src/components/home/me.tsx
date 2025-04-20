@@ -29,6 +29,7 @@ export const Avatar = () => {
       height={0}
       sizes="50vw"
       style={{ width: "30vh", height: "auto" }}
+      priority
     />
   );
 };
