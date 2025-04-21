@@ -2,5 +2,17 @@
   "home": {
     "title": "Frontend Developer",
     "name": "Kim Daye"
+  },
+  "info": {
+    "info1": "User-facing",
+    "info2": "Frontend",
+    "info3": "developer",
+    "info4": "Interested in efficient code structure and reusable code",
+    "info5": "And application build/deployment",
+    "name": "Name",
+    "name_value": "Kim Daye",
+    "email": "Email",
+    "education": "Education",
+    "education_value": "Sookmyung Women's University"
   }
 }
