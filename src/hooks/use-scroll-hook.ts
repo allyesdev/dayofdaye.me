@@ -68,6 +68,7 @@ export const useScrollHook = () => {
     });
     if (currentSection) {
       router.replace(`#${currentSection}`, { scroll: false });
+      setScrollData({ currentHash: `#${currentSection}` });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

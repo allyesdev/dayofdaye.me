@@ -4,4 +4,5 @@ export interface IScroll {
   userScrolled: boolean;
   isOverflowing: boolean;
   isAutoScrolling: boolean;
+  currentHash?: string;
 }
