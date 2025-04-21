@@ -3,6 +3,7 @@
 import { IScroll } from '@/types/scroll';
 import { atom, useAtom, useAtomValue } from 'jotai';
 import { RefObject, UIEventHandler, useCallback, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export const scrollStartRefAtom = atom<RefObject<HTMLDivElement> | null>(null);
 export const scrollEndRefAtom = atom<RefObject<HTMLDivElement> | null>(null);
@@ -24,6 +25,7 @@ export const scrollDataAtom = atom(
 
 export const useScrollHook = () => {
   const [scrollData, setScrollData] = useAtom(scrollDataAtom);
+  const router = useRouter();
 
   useEffect(() => {
     setScrollData({ userScrolled: false });
@@ -54,6 +56,19 @@ export const useScrollHook = () => {
 
     const isOverflow = target.scrollHeight > target.clientHeight;
     setScrollData({ isOverflowing: isOverflow });
+
+    // 앵커 라우팅 로직 추가
+    const sections = document.querySelectorAll('div[id]');
+    let currentSection = '';
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop <= 100) {
+        currentSection = section.id;
+      }
+    });
+    if (currentSection) {
+      router.replace(`#${currentSection}`, { scroll: false });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

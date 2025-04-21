@@ -163,6 +163,7 @@ export const ProjectItem = ({
 export const MeProject = () => {
   return (
     <MeWrap
+      id='project'
       wrapClass='bg-emerald-50 dark:bg-emerald-950'
       wrapStyle={{
         flexDirection: 'column',

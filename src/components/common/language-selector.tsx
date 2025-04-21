@@ -1,10 +1,19 @@
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { GlobeIcon } from './icons';
 
 export const LanguageSelector = () => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const currentPath = pathname.replace(/^\/[a-z]{2}/, '');
+  const currentHash = window.location.hash;
+  const currentSearch = searchParams.toString();
+
+  const getFullPath = (locale: string) => {
+    const search = currentSearch ? `?${currentSearch}` : '';
+    return `/${locale}${currentPath}${search}${currentHash}`;
+  };
 
   return (
     <>
@@ -24,10 +33,10 @@ export const LanguageSelector = () => {
         style={{ positionAnchor: '--anchor-1' } as React.CSSProperties}
       >
         <li>
-          <Link href={`/en${currentPath}`}>English</Link>
+          <Link href={getFullPath('en')}>English</Link>
         </li>
         <li>
-          <Link href={`/ko${currentPath}`}>한국어</Link>
+          <Link href={getFullPath('ko')}>한국어</Link>
         </li>
       </ul>
     </>

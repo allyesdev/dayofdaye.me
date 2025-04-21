@@ -62,6 +62,7 @@ const SkillGroupItem = ({ name, skills }: SkillGroup) => {
 export const MeSkill = () => {
   return (
     <MeWrap
+      id='skill'
       wrapStyle={{
         flexDirection: 'column',
         gap: '100px',
