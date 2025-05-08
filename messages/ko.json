@@ -14,5 +14,9 @@
     "email": "이메일",
     "education": "학력",
     "education_value": "숙명여자대학교"
+  },
+  "projects": {
+    "usedTech": "사용한 기술",
+    "noDemoDescription": "회사 내부 시스템으로 보안 규정상 데모 영상을 공유할 수 없습니다. 양해 부탁드립니다."
   }
 }

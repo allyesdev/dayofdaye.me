@@ -1,11 +1,11 @@
 {
   "home": {
-    "title": "Frontend Developer",
+    "title": "Web Developer",
     "name": "Kim Daye"
   },
   "info": {
     "info1": "User-facing",
-    "info2": "Frontend",
+    "info2": "Web",
     "info3": "developer",
     "info4": "Interested in efficient code structure and reusable code",
     "info5": "And application build/deployment",
@@ -14,5 +14,9 @@
     "email": "Email",
     "education": "Education",
     "education_value": "Sookmyung Women's University"
+  },
+  "projects": {
+    "usedTech": "Used Tech",
+    "noDemoDescription": "Due to company security regulations, demo videos cannot be shared. Please understand."
   }
 }

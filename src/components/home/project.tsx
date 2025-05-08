@@ -5,6 +5,8 @@ import { MeWrap } from './me';
 import { UsedTech, WhatIDid } from '@/types/project';
 import { projects } from '@/data/project';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+
 export const ProjectItem = ({
   index,
   title,
@@ -28,6 +30,7 @@ export const ProjectItem = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const projectRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('projects');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -124,6 +127,9 @@ export const ProjectItem = ({
             sizes='100%'
             style={{ width: '100%', height: 'auto' }}
           />
+          <div className='text-xs font-light text-gray-400 flex flex-col gap-1'>
+            {t('noDemoDescription')}
+          </div>
           <div className='text-base font-normal flex flex-col gap-1'>
             <div className='text-base font-normal'>Lesson Learned</div>
             <div className='flex justify-between'>
@@ -135,7 +141,7 @@ export const ProjectItem = ({
             </div>
           </div>
           <div className='text-base font-normal flex flex-col gap-1'>
-            <div className='text-base font-normal'>사용한 기술</div>
+            <div className='text-base font-normal'>{t('usedTech')}</div>
             <div className='flex justify-between'>
               {usedTech.map((tech, techIdx) => (
                 <div
@@ -161,6 +167,8 @@ export const ProjectItem = ({
 };
 
 export const MeProject = () => {
+  const locale = useLocale();
+
   return (
     <MeWrap
       id='project'
@@ -174,7 +182,7 @@ export const MeProject = () => {
       <div className='flex flex-col items-center justify-center py-20 gap-10 '>
         <h2>PROJECTS</h2>
         <div className='flex flex-col gap-10 2xl:grid 2xl:grid-cols-2 2xl:gap-10 2xl:px-10'>
-          {projects.map((project, index) => (
+          {projects[locale].map((project, index) => (
             <ProjectItem key={index} index={index} {...project} />
           ))}
         </div>
