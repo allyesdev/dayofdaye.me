@@ -4,6 +4,7 @@ import { Skill, SkillGroup } from '@/types/skill';
 import { MeWrap } from './me';
 import { skills } from '@/data/skill';
 import { useEffect, useRef, useState } from 'react';
+import { useLocale } from 'next-intl';
 
 const SkillItem = ({ name, description, level }: Skill) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -60,6 +61,8 @@ const SkillGroupItem = ({ name, skills }: SkillGroup) => {
 };
 
 export const MeSkill = () => {
+  const locale = useLocale();
+
   return (
     <MeWrap
       id='skill'
@@ -72,7 +75,7 @@ export const MeSkill = () => {
       <div className='flex flex-col items-center justify-center py-20 gap-10'>
         <h2>SKILL SET</h2>
         <div className='flex flex-col gap-20 w-[80%]'>
-          {skills.map((skillGroup, index) => (
+          {skills[locale].map((skillGroup, index) => (
             <SkillGroupItem key={index} {...skillGroup} />
           ))}
         </div>
