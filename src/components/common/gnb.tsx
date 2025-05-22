@@ -5,6 +5,24 @@ import Link from 'next/link';
 import { useScrollHook } from '@/hooks/use-scroll-hook';
 import cn from 'classnames';
 
+const GNBMenu = () => {
+  return (
+    <>
+      <div className='tooltip tooltip-bottom dark:text-white' data-tip='Home'>
+        <Link href='/'>
+          <HomeIcon size={20} />
+        </Link>
+      </div>
+      <div className='tooltip tooltip-bottom dark:text-white' data-tip='Chat'>
+        <Link href='/chat'>
+          <BotIcon size={20} />
+        </Link>
+      </div>
+      <div className='divider divider-horizontal m-0'></div>
+    </>
+  );
+};
+
 export const GNB = () => {
   const { scrollData } = useScrollHook();
 
@@ -20,24 +38,7 @@ export const GNB = () => {
           {!scrollData.isAtTop && <span>개발자 김다예</span>}
         </div>
         <div className='flex items-center justify-between gap-4'>
-          <div
-            className='tooltip tooltip-bottom dark:text-white'
-            data-tip='Home'
-          >
-            <Link href='/'>
-              <HomeIcon size={20} />
-            </Link>
-          </div>
-          <div
-            className='tooltip tooltip-bottom dark:text-white'
-            data-tip='Chat'
-          >
-            <Link href='/chat'>
-              <BotIcon size={20} />
-            </Link>
-          </div>
-          <div className='divider divider-horizontal m-0'></div>
-
+          {process.env.NODE_ENV === 'development' && <GNBMenu />}
           <DarkModeToggle />
           <LanguageSelector />
         </div>
