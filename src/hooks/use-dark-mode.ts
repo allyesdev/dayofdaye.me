@@ -36,6 +36,23 @@ export default function useDarkMode() {
   };
 
   useEffect(() => {
+    // 초기 렌더링 시 시스템 설정 확인
+    if (typeof window !== 'undefined') {
+      const systemPrefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      const initialMode =
+        darkMode === 'system'
+          ? systemPrefersDark
+            ? 'dark'
+            : 'light'
+          : darkMode;
+      applyMode(initialMode);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     applyMode(darkMode);
   }, [darkMode]);
 
