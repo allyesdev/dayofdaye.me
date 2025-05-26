@@ -35,7 +35,9 @@ export const MeInfo = () => {
           </div>
           <div className='flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end'>
             <span className='font-light'>{t('education')}</span>
-            <span className='text-2xl font-light'>{t('education_value')}</span>
+            <span className='text-2xl font-light whitespace-pre-line'>
+              {t('education_value')}
+            </span>
           </div>
           <div className='flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end'>
             <span className='font-light'>Linked In</span>

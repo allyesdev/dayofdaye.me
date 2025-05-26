@@ -49,7 +49,7 @@ export const ProjectItem = ({
   }, []);
 
   const className = useMemo(() => {
-    let baseClass = 'transition-all duration-1000 transform';
+    let baseClass = 'visible transition-all duration-1000 transform';
     switch (index) {
       case 0:
         baseClass +=
@@ -76,9 +76,9 @@ export const ProjectItem = ({
     }
 
     if (!isVisible) {
-      baseClass += ' invisible translate-y-20 translate-x-20';
+      baseClass += ' opacity-0 translate-y-20 translate-x-20';
     } else {
-      baseClass += ' visible translate-y-0 translate-x-0';
+      baseClass += ' opacity-100 translate-y-0 translate-x-0';
     }
 
     return baseClass;
