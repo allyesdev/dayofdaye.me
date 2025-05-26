@@ -1,5 +1,6 @@
 'use client';
 
+import _ from 'lodash';
 import { IScroll } from '@/types/scroll';
 import { atom, useAtom, useAtomValue } from 'jotai';
 import { RefObject, UIEventHandler, useCallback, useEffect } from 'react';
@@ -35,29 +36,7 @@ export const useScrollHook = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleScroll: UIEventHandler<HTMLDivElement> = useCallback((e) => {
-    const target = e.target as HTMLDivElement;
-
-    const scrolledHeight =
-      Math.floor(target.scrollHeight) - Math.floor(target.scrollTop);
-    const bottom =
-      scrolledHeight <= Math.floor(target.clientHeight) + 1 &&
-      scrolledHeight >= Math.floor(target.clientHeight) - 1;
-    setScrollData({ isAtBottom: bottom });
-
-    const top = target.scrollTop === 0;
-    setScrollData({ isAtTop: top });
-
-    if (!bottom && !scrollData.isAutoScrolling) {
-      setScrollData({ userScrolled: true });
-    } else {
-      setScrollData({ userScrolled: false });
-    }
-
-    const isOverflow = target.scrollHeight > target.clientHeight;
-    setScrollData({ isOverflowing: isOverflow });
-
-    // 앵커 라우팅 로직 추가
+  const updateHash = useCallback(() => {
     const sections = document.querySelectorAll('div[id]');
     let currentSection = '';
     sections.forEach((section) => {
@@ -66,12 +45,40 @@ export const useScrollHook = () => {
         currentSection = section.id;
       }
     });
-    if (currentSection) {
+    if (currentSection && currentSection !== scrollData.currentHash?.slice(1)) {
       router.replace(`#${currentSection}`, { scroll: false });
       setScrollData({ currentHash: `#${currentSection}` });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router, scrollData.currentHash, setScrollData]);
+
+  const handleScroll: UIEventHandler<HTMLDivElement> = useCallback(
+    (e) => {
+      const target = e.target as HTMLDivElement;
+
+      const scrolledHeight =
+        Math.floor(target.scrollHeight) - Math.floor(target.scrollTop);
+      const bottom =
+        scrolledHeight <= Math.floor(target.clientHeight) + 1 &&
+        scrolledHeight >= Math.floor(target.clientHeight) - 1;
+      setScrollData({ isAtBottom: bottom });
+
+      const top = target.scrollTop === 0;
+      setScrollData({ isAtTop: top });
+
+      if (!bottom && !scrollData.isAutoScrolling) {
+        setScrollData({ userScrolled: true });
+      } else {
+        setScrollData({ userScrolled: false });
+      }
+
+      const isOverflow = target.scrollHeight > target.clientHeight;
+      setScrollData({ isOverflowing: isOverflow });
+
+      // 앵커 라우팅 로직 추가
+      _.throttle(updateHash, 100)();
+    },
+    [setScrollData, scrollData.isAutoScrolling, updateHash]
+  );
 
   const scrollStartRef = useAtomValue(scrollStartRefAtom);
   const scrollEndRef = useAtomValue(scrollEndRefAtom);
