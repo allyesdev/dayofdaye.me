@@ -177,7 +177,6 @@ export const MeProject = () => {
       wrapStyle={{
         flexDirection: 'column',
         gap: '100px',
-        height: 'fit-content',
       }}
     >
       <div className='flex flex-col items-center justify-center py-20 gap-10 min-h-max h-fit'>
