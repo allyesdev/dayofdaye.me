@@ -10,6 +10,7 @@ export const MeInfo = () => {
       wrapStyle={{
         flexDirection: 'column',
         gap: '100px',
+        height: 'fit-content',
       }}
     >
       <div className='w-[80vmin] sm:w-[60vmin] break-keep text-center'>

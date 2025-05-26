@@ -42,21 +42,14 @@ export const ProjectItem = ({
       },
       { threshold: 0.1 }
     );
-
     if (projectRef.current) {
       observer.observe(projectRef.current);
     }
-
     return () => observer.disconnect();
-  }, [index]);
+  }, []);
 
   const className = useMemo(() => {
-    let baseClass = 'visible transition-all duration-1000 transform';
-    if (!isVisible) {
-      baseClass += ' opacity-0 translate-y-20 translate-x-20';
-    } else {
-      baseClass += ' opacity-100 translate-y-0 translate-x-0';
-    }
+    let baseClass = 'transition-all duration-1000 transform';
     switch (index) {
       case 0:
         baseClass +=
@@ -81,6 +74,13 @@ export const ProjectItem = ({
       default:
         break;
     }
+
+    if (!isVisible) {
+      baseClass += ' invisible translate-y-20 translate-x-20';
+    } else {
+      baseClass += ' visible translate-y-0 translate-x-0';
+    }
+
     return baseClass;
   }, [index, isVisible]);
 
@@ -122,10 +122,11 @@ export const ProjectItem = ({
           <Image
             src={imageSrc}
             alt='tax-project'
-            width={0}
-            height={0}
-            sizes='100%'
+            width={800}
+            height={600}
+            sizes='(max-width: 768px) 100vw, 800px'
             style={{ width: '100%', height: 'auto' }}
+            priority={index === 0}
           />
           <div className='text-xs font-light text-gray-400 flex flex-col gap-1'>
             {t('noDemoDescription')}
@@ -176,10 +177,10 @@ export const MeProject = () => {
       wrapStyle={{
         flexDirection: 'column',
         gap: '100px',
-        minHeight: 'fit-content',
+        height: 'fit-content',
       }}
     >
-      <div className='flex flex-col items-center justify-center py-20 gap-10 '>
+      <div className='flex flex-col items-center justify-center py-20 gap-10 min-h-max h-fit'>
         <h2>PROJECTS</h2>
         <div className='flex flex-col gap-10 2xl:grid 2xl:grid-cols-2 2xl:gap-10 2xl:px-10'>
           {projects[locale].map((project, index) => (

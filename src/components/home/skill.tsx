@@ -69,10 +69,10 @@ export const MeSkill = () => {
       wrapStyle={{
         flexDirection: 'column',
         gap: '100px',
-        minHeight: 'fit-content',
+        height: 'fit-content',
       }}
     >
-      <div className='flex flex-col items-center justify-center py-20 gap-10'>
+      <div className='flex flex-col items-center justify-center py-20 gap-10 min-h-max h-fit'>
         <h2>SKILL SET</h2>
         <div className='flex flex-col gap-20 w-[80%]'>
           {skills[locale].map((skillGroup, index) => (
