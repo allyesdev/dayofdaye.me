@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM --platform=linux/amd64 node:20-alpine AS build_amd64
 
 ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production
 
