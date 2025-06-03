@@ -3,9 +3,10 @@
 import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { GlobeIcon } from './icons';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { scrollDataAtom } from '@/hooks/use-scroll-hook';
 import { useAtom } from 'jotai';
+
 export const LanguageSelector = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -15,13 +16,23 @@ export const LanguageSelector = () => {
   const [scrollData] = useAtom(scrollDataAtom);
 
   const getFullPath = useCallback(
-    (locale: string) => {
+    (_locale: string) => {
       const currentHash = scrollData?.currentHash || '';
       const search = currentSearch ? `?${currentSearch}` : '';
-      return `/${locale}${currentPath}${search}${currentHash}`;
+      return `/${_locale}${currentPath}${search}${currentHash}`;
     },
     [currentPath, currentSearch, scrollData.currentHash]
   );
+
+  useEffect(() => {
+    const initialHash = window.location.hash;
+    if (initialHash) {
+      document.getElementById(initialHash.slice(1))?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
