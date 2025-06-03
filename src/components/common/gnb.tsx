@@ -32,7 +32,7 @@ export const GNB = () => {
   const { scrollData } = useScrollHook();
 
   return (
-    <div className='w-full fixed top-2 bg-transparent px-6 z-20'>
+    <div className='w-full fixed top-2 bg-transparent px-4 z-20 max-w-[1024px] left-[50%] translate-x-[-50%]'>
       <nav
         className={cn(
           'flex flex-row items-center justify-between py-4 px-6 gap-4 rounded-2xl bg-white dark:bg-base-100 h-16',
