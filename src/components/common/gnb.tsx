@@ -1,6 +1,6 @@
 import LanguageSelector from './language-selector';
 import DarkModeToggle from '@/components/common/darkmode-toggle';
-import { HomeIcon, BotIcon } from './icons';
+import { HomeIcon, BotIcon, BlogIcon } from './icons';
 import Link from 'next/link';
 import { useScrollHook } from '@/hooks/use-scroll-hook';
 import cn from 'classnames';
@@ -11,6 +11,11 @@ const GNBMenu = () => {
       <div className='tooltip tooltip-bottom dark:text-white' data-tip='Home'>
         <Link href='/'>
           <HomeIcon size={20} />
+        </Link>
+      </div>
+      <div className='tooltip tooltip-bottom dark:text-white' data-tip='Blog'>
+        <Link href='/blog'>
+          <BlogIcon size={20} />
         </Link>
       </div>
       <div className='tooltip tooltip-bottom dark:text-white' data-tip='Chat'>

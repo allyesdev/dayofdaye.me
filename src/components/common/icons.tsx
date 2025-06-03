@@ -1055,3 +1055,66 @@ export const HalfBrightnessIcon = ({ size = 16 }: { size?: number }) => {
     </svg>
   );
 };
+
+export const BlogIcon = ({ size = 16 }: { size?: number }) => {
+  return (
+    <svg
+      height={size}
+      strokeLinejoin='round'
+      viewBox='0 0 20 20'
+      width={size}
+      style={{ color: 'currentcolor' }}
+      fill='none'
+    >
+      <g clipPath='url(#clip0_12_5902)'>
+        <path
+          d='M19.2849 1.42847H11.4277'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M19.2849 5.71411H11.4277'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M19.2849 10H11.4277'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M19.2849 18.5713H11.4277'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M19.2849 14.2856H11.4277'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M0.713867 2.14275V7.85704C0.713867 8.25152 1.03366 8.57132 1.42815 8.57132H7.14244C7.53692 8.57132 7.85672 8.25152 7.85672 7.85704V2.14275C7.85672 1.74827 7.53692 1.42847 7.14244 1.42847H1.42815C1.03366 1.42847 0.713867 1.74827 0.713867 2.14275Z'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M0.713867 12.1428V17.857C0.713867 18.2515 1.03366 18.5713 1.42815 18.5713H7.14244C7.53692 18.5713 7.85672 18.2515 7.85672 17.857V12.1428C7.85672 11.7483 7.53692 11.4285 7.14244 11.4285H1.42815C1.03366 11.4285 0.713867 11.7483 0.713867 12.1428Z'
+          stroke='black'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+      </g>
+      <defs>
+        <clipPath id='clip0_12_5902'>
+          <rect width='20' height='20' fill='white' />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
