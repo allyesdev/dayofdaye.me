@@ -1,11 +1,13 @@
 import { getPost } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 
-type Props = {
-  params: { slug: string };
-};
-export default async function BlogPostPage({ params }: Props) {
-  const post = await getPost(params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await getPost(slug);
   if (!post) return notFound();
 
   return (
