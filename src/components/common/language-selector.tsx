@@ -35,22 +35,14 @@ export const LanguageSelector = () => {
   }, []);
 
   return (
-    <>
-      <div className='flex h-5 tooltip tooltip-bottom' data-tip='Language'>
-        <button
-          className='text-base-500 dark:text-white'
-          popoverTarget='popover-1'
-          style={{ anchorName: '--anchor-1' } as React.CSSProperties}
-        >
-          <GlobeIcon size={20} />
-        </button>
-      </div>
-      <ul
-        className='dropdown dropdown-end menu w-36 rounded-box bg-base-100 shadow-sm'
-        popover='auto'
-        id='popover-1'
-        style={{ positionAnchor: '--anchor-1' } as React.CSSProperties}
-      >
+    <div
+      className='dropdown dropdown-bottom dropdown-end flex h-5 tooltip tooltip-bottom'
+      data-tip='Language'
+    >
+      <button className='text-base-500 dark:text-white'>
+        <GlobeIcon size={20} />
+      </button>
+      <ul className='dropdown-content menu w-36 rounded-box bg-base-100 shadow-sm'>
         <li>
           <Link href={getFullPath('en')}>English</Link>
         </li>
@@ -58,7 +50,7 @@ export const LanguageSelector = () => {
           <Link href={getFullPath('ko')}>한국어</Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

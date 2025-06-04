@@ -1,8 +1,7 @@
 export interface IScroll {
+  currentHash?: string;
+  scrollY: number;
+  isScrollingUp: boolean;
   isAtTop: boolean;
   isAtBottom: boolean;
-  userScrolled: boolean;
-  isOverflowing: boolean;
-  isAutoScrolling: boolean;
-  currentHash?: string;
 }

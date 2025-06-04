@@ -5,7 +5,7 @@ import { MeSkill } from '@/components/home/skill';
 
 const Home = () => {
   return (
-    <div className='w-full h-full '>
+    <div className='w-full h-full'>
       <div className='flex flex-col items-center justify-center w-full h-fit'>
         <MeMain />
         <MeInfo />

@@ -2,19 +2,19 @@
 
 import _ from 'lodash';
 import { IScroll } from '@/types/scroll';
-import { atom, useAtom, useAtomValue } from 'jotai';
-import { RefObject, UIEventHandler, useCallback, useEffect } from 'react';
+import { atom, useAtom } from 'jotai';
+import { RefObject, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 export const scrollStartRefAtom = atom<RefObject<HTMLDivElement> | null>(null);
 export const scrollEndRefAtom = atom<RefObject<HTMLDivElement> | null>(null);
 
 export const scrollAtom = atom<IScroll>({
+  scrollY: 0,
+  isScrollingUp: false,
+  currentHash: '',
   isAtTop: true,
   isAtBottom: false,
-  userScrolled: false,
-  isOverflowing: false,
-  isAutoScrolling: false,
 });
 
 export const scrollDataAtom = atom(
@@ -24,17 +24,9 @@ export const scrollDataAtom = atom(
   }
 );
 
-export const useScrollHook = () => {
+export const useScrollHook = (threshold: number = 50) => {
   const [scrollData, setScrollData] = useAtom(scrollDataAtom);
   const router = useRouter();
-
-  useEffect(() => {
-    setScrollData({ userScrolled: false });
-    if (scrollData.userScrolled) {
-      setScrollData({ userScrolled: false });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const updateHash = useCallback(() => {
     const sections = document.querySelectorAll('div[id]');
@@ -45,67 +37,50 @@ export const useScrollHook = () => {
         currentSection = section.id;
       }
     });
-    if (currentSection && currentSection !== scrollData.currentHash?.slice(1)) {
+    if (
+      currentSection &&
+      currentSection !== 'scroll-content' &&
+      currentSection !== scrollData.currentHash?.slice(1)
+    ) {
       router.replace(`#${currentSection}`, { scroll: false });
       setScrollData({ currentHash: `#${currentSection}` });
     }
   }, [router, scrollData.currentHash, setScrollData]);
 
-  const handleScroll: UIEventHandler<HTMLDivElement> = useCallback(
-    (e) => {
-      const target = e.target as HTMLDivElement;
+  useEffect(() => {
+    const scrollContent = document.getElementById('scroll-content');
+    let lastY = scrollContent?.scrollTop || 0;
 
-      const scrolledHeight =
-        Math.floor(target.scrollHeight) - Math.floor(target.scrollTop);
-      const bottom =
-        scrolledHeight <= Math.floor(target.clientHeight) + 1 &&
-        scrolledHeight >= Math.floor(target.clientHeight) - 1;
-      setScrollData({ isAtBottom: bottom });
+    const onScroll = () => {
+      const currentY = scrollContent?.scrollTop || 0;
+      _.throttle(() => {
+        setScrollData({
+          scrollY: currentY,
+          isScrollingUp: currentY < lastY || currentY < threshold,
+          isAtTop: currentY < threshold,
+          isAtBottom:
+            currentY >
+            (scrollContent?.scrollHeight || 0) - window.innerHeight - threshold,
+        });
+        lastY = currentY;
+        updateHash();
+      }, 100)();
+    };
 
-      const top = target.scrollTop === 0;
-      setScrollData({ isAtTop: top });
-
-      if (!bottom && !scrollData.isAutoScrolling) {
-        setScrollData({ userScrolled: true });
-      } else {
-        setScrollData({ userScrolled: false });
-      }
-
-      const isOverflow = target.scrollHeight > target.clientHeight;
-      setScrollData({ isOverflowing: isOverflow });
-
-      // 앵커 라우팅 로직 추가
-      _.throttle(updateHash, 100)();
-    },
-    [setScrollData, scrollData.isAutoScrolling, updateHash]
-  );
-
-  const scrollStartRef = useAtomValue(scrollStartRefAtom);
-  const scrollEndRef = useAtomValue(scrollEndRefAtom);
+    scrollContent?.addEventListener('scroll', onScroll);
+    return () => scrollContent?.removeEventListener('scroll', onScroll);
+  }, [setScrollData, threshold, updateHash]);
 
   const scrollToTop = useCallback(() => {
-    if (scrollStartRef?.current) {
-      scrollStartRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   const scrollToBottom = useCallback(() => {
-    setScrollData({ isAutoScrolling: true });
-    setTimeout(() => {
-      if (scrollEndRef?.current) {
-        scrollEndRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-      setScrollData({ isAutoScrolling: false });
-    }, 100);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }, []);
 
   return {
     scrollData,
-    scrollStartRef,
-    scrollEndRef,
-    handleScroll,
     scrollToTop,
     scrollToBottom,
   };

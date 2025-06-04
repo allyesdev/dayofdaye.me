@@ -3,7 +3,7 @@ import '../global.css';
 import { routing } from '@/i18n/routing';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { ScrollContent } from '@/components/common/scroll-content';
+import { GNB } from '@/components/common/gnb';
 
 export default async function RootLayout({
   children,
@@ -22,7 +22,13 @@ export default async function RootLayout({
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <body>
         <NextIntlClientProvider>
-          <ScrollContent>{children}</ScrollContent>
+          <div
+            id='scroll-content'
+            className='w-full h-full flex flex-col grow overflow-auto overflow-x-hidden'
+          >
+            <GNB />
+            {children}
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
