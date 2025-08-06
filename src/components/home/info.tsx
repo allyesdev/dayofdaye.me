@@ -29,8 +29,14 @@ export const MeInfo = () => {
             <span className='text-2xl font-light'>{t('name_value')}</span>
           </div>
           <div className='flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end'>
-            <span className='font-light'>{t('email')}</span>
-            <span className='text-2xl font-light'>kdy24610@gmail.com</span>
+            <span className='font-light'>{t('github')}</span>
+            <a
+              href='https://github.com/allyesdev'
+              target='_blank'
+              className='text-2xl font-light underline underline-offset-1'
+            >
+              allyesdev
+            </a>
           </div>
           <div className='flex flex-col items-start justify-center gap-1 md:items-center lg:flex-row lg:items-end'>
             <span className='font-light'>{t('education')}</span>
