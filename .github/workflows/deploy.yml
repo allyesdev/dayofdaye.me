@@ -35,7 +35,7 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.ECR_REPOSITORY }}:0.0.1
-          file: deploy/Dockerfile
+          file: Dockerfile
 
       - name: Connect to EC2 and deploy
         uses: appleboy/ssh-action@v0.1.10
