@@ -9,19 +9,19 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'React',
           description:
             '리액트를 사용하여 웹 애플리케이션을 개발합니다. Tanstack Query, Redux, Jotai로 능숙하게 상태관리를 할 수 있습니다.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Typescript',
           description:
             '타입스크립트를 사용하여 웹 애플리케이션을 개발합니다. 타입 추론을 통해 코드 안정성을 높이고, 타입 충돌을 방지할 수 있습니다.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Next.js',
           description:
             'Next.js를 사용하여 웹 애플리케이션을 개발합니다. 서버 사이드 렌더링을 통해 최적화된 성능을 제공합니다. 개인 프로젝트에서만 사용하고 있습니다.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'Vue.js',
@@ -33,13 +33,13 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'CSS/SCSS',
           description:
             'css와 css 전처리기 scss를 활용하여 스타일링을 합니다. 프로젝트에서 사용하고 있습니다.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Tailwind CSS',
           description:
             'Tailwind CSS를 사용하여 스타일링을 합니다. 개인 프로젝트에서 사용하고 있습니다.',
-          level: 2,
+          level: 1,
         },
       ],
     },
@@ -50,24 +50,24 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'python - FastAPI',
           description:
             'python, FastAPI를 사용하여 빠른 성능으로 쉽게 백엔드 애플리케이션을 개발할 수 있습니다. SQLAlchemy를 사용하여 데이터베이스 조작을 합니다. 최근 LangChain, LangGraph를 사용하여 챗봇 개발 프로젝트를 진행했습니다.',
-          level: 3,
+          level: 2,
         },
         {
           name: 'java - Spring Boot',
           description:
             '자바, 스프링 부트를 사용하여 백엔드 애플리케이션을 개발합니다. mybatis를 사용하여 데이터베이스 조작을 합니다.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'Node.js',
           description:
             'Node.js를 사용하여 백엔드 애플리케이션을 개발합니다. Express, Nest.js를 사용하여 백엔드 애플리케이션을 개발합니다. 개인 프로젝트에서 사용하고 있습니다.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'mysql',
           description: 'mysql을 사용하여 데이터를 저장하고 조회합니다.',
-          level: 3,
+          level: 2,
         },
         {
           name: 'redis',
@@ -83,7 +83,7 @@ export const skills: Record<string, SkillGroup[]> = {
         {
           name: 'Docker',
           description: 'Docker 명령어를 통해 컨테이너를 관리합니다.',
-          level: 3,
+          level: 2,
         },
         {
           name: 'Kubernetes',
@@ -95,7 +95,7 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'Azure',
           description:
             'Azure의 Application Gateway, AKS, AC2 등 서비스를 사용하여 클라우드 서비스를 관리합니다.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'Github Actions',
@@ -112,7 +112,7 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'Git',
           description:
             'Git 명령어를 통해 버전 관리하고 협업을 합니다. 협업 시 커밋 메시지를 작성하고 커밋 메시지를 통해 변경 사항을 설명합니다.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Notion',
@@ -129,7 +129,7 @@ export const skills: Record<string, SkillGroup[]> = {
         {
           name: 'Figma',
           description: 'Figma를 사용하여 디자이너와 협업을 합니다.',
-          level: 2,
+          level: 1,
         },
       ],
     },
@@ -142,19 +142,19 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'React',
           description:
             'Web application development using React. Proficient state management with Tanstack Query, Redux, and Jotai.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Typescript',
           description:
             'Web application development using TypeScript. Improved code stability and type conflict prevention through type inference.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Next.js',
           description:
             'Web application development using Next.js. Optimized performance through server-side rendering. Used only in personal projects.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'Vue.js',
@@ -166,13 +166,13 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'CSS/SCSS',
           description:
             'Styling using CSS and the CSS preprocessor SCSS. Currently used in projects.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Tailwind CSS',
           description:
             'Styling using Tailwind CSS. Currently used in personal projects.',
-          level: 2,
+          level: 1,
         },
       ],
     },
@@ -183,24 +183,24 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'python - FastAPI',
           description:
             'Backend application development with fast performance using Python and FastAPI. Database manipulation using SQLAlchemy. Recent chatbot development project using LangChain and LangGraph.',
-          level: 3,
+          level: 2,
         },
         {
           name: 'java - Spring Boot',
           description:
             'Backend application development using Java and Spring Boot. Database manipulation using MyBatis.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'Node.js',
           description:
             'Backend application development using Node.js, Express, and Nest.js. Used in personal projects.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'mysql',
           description: 'Data storage and querying using MySQL.',
-          level: 3,
+          level: 2,
         },
         {
           name: 'redis',
@@ -216,7 +216,7 @@ export const skills: Record<string, SkillGroup[]> = {
         {
           name: 'Docker',
           description: 'Container management using Docker commands.',
-          level: 3,
+          level: 2,
         },
         {
           name: 'Kubernetes',
@@ -228,7 +228,7 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'Azure',
           description:
             'Cloud service management using Azure services including Application Gateway, AKS, and AC2.',
-          level: 2,
+          level: 1,
         },
         {
           name: 'Github Actions',
@@ -245,7 +245,7 @@ export const skills: Record<string, SkillGroup[]> = {
           name: 'Git',
           description:
             'Version management and collaboration using Git commands. Change documentation through commit messages during collaboration.',
-          level: 4,
+          level: 3,
         },
         {
           name: 'Notion',
@@ -262,7 +262,7 @@ export const skills: Record<string, SkillGroup[]> = {
         {
           name: 'Figma',
           description: 'Collaboration with designers through Figma.',
-          level: 2,
+          level: 1,
         },
       ],
     },
